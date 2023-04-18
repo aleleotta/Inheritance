@@ -4,6 +4,8 @@ public class Hour {
 	protected int hour = 0;
 	protected int minute = 0;
 	
+	public Hour() {}
+	
 	public Hour(int hour, int minute) {
 		this.hour = hour;
 		this.minute = minute;
@@ -13,8 +15,9 @@ public class Hour {
 		minute++;
 	}
 	
-	public void print() {
-		System.out.println("Hour: " + getHour() + ":" + getMinute());
+	@Override
+	public String toString() {
+		return "Hour: " + getHour() + ":" + getMinute();
 	}
 	
 	public boolean setHour(int hour) {

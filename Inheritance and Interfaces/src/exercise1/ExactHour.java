@@ -3,6 +3,8 @@ package exercise1;
 public class ExactHour extends Hour {
 	private int second = 0;
 	
+	public ExactHour() {}
+	
 	public ExactHour(int hour, int minute, int second) {
 		super(hour, minute);
 		this.second = second;
@@ -23,6 +25,11 @@ public class ExactHour extends Hour {
 	
 	public int getSecond() {
 		return second;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + ":" + second;
 	}
 	
 }
