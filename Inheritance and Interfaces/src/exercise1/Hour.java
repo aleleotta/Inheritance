@@ -3,12 +3,46 @@ package exercise1;
 public class Hour {
 	private int hour = 0;
 	private int minute = 0;
-	private int second = 0;
 	
 	public Hour(int hour, int minute) {
 		this.hour = hour;
 		this.minute = minute;
 	}
+	
+	public void increase() {
+		minute++;
+	}
+	
+	public void print() {
+		System.out.println("Hour: " + );
+	}
+	
+	public boolean setHour(int hour) {
+		boolean valid = false;
+		if(hour < 23 && !(hour < 0)) {
+			valid = true;
+			this.hour = hour;
+		}
+		return valid;
+	}
+	
+	public int getHour() {
+		return hour;
+	}
+
+	public boolean setMinutes(int minute) {
+		boolean valid = false;
+		if(minute >= 0) {
+			valid = true;
+			this.minute = minute;
+		}
+		return valid;
+	}
+	
+	public int getMinute() {
+		return minute;
+	}
+	
 }
 
 /*
