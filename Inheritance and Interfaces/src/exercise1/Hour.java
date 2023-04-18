@@ -1,8 +1,8 @@
 package exercise1;
 
 public class Hour {
-	private int hour = 0;
-	private int minute = 0;
+	protected int hour = 0;
+	protected int minute = 0;
 	
 	public Hour(int hour, int minute) {
 		this.hour = hour;
@@ -14,7 +14,7 @@ public class Hour {
 	}
 	
 	public void print() {
-		System.out.println("Hour: " + );
+		System.out.println("Hour: " + getHour() + ":" + getMinute());
 	}
 	
 	public boolean setHour(int hour) {
