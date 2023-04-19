@@ -6,7 +6,8 @@ public class Main {
 		int hour = 0;
 		int minute = 0;
 		int second = 0;
-		ExactHour time = new ExactHour();
+		Hour time = new Hour();
+		ExactHour time1 = new ExactHour();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Do you want to set a specific time?");
 		char set = sc.next().charAt(0);
@@ -29,15 +30,17 @@ public class Main {
 				hour = sc.nextInt();
 				System.out.print("Minutes: ");
 				minute = sc.nextInt();
-				time = new ExactHour(hour, minute, second);
+				time = new Hour(hour, minute);
 				break;
 			}
 			break;
 		case 'N', 'n':
-			time = new ExactHour();
+			time = new Hour();
+			time1 = new ExactHour();
 			break;
 		default:
-			time = new ExactHour();
+			time = new Hour();
+			time1 = new ExactHour();
 			break;
 		}
 		int option = 0;
@@ -45,15 +48,32 @@ public class Main {
 			System.out.print("\nMenu:\n\n1) Print\n2) Increase\n3) Terminate\n\nOption: ");
 			option = sc.nextInt();
 			switch(option) {
-			case 1:
-				time.toString();
+			case 1: //Print
+				char option1;
+				System.out.println("With seconds?");
+				option1 = sc.next().charAt(0);
+				if(option1 == 'Y' || option1 == 'y') {
+					System.out.println(time1.toString());
+				} else {
+					System.out.println(time.toString());
+				}
 				break;
-			case 2:
+			case 2: //Increase
+				System.out.println("Increase seconds?");
+				option1 = sc.next().charAt(0);
+				if(option1 == 'Y' || option1 == 'y') {
+					time.increase();
+					time1.increase();
+					System.out.println(time1.toString());
+				} else {
+					time.increase();
+					System.out.println(time.toString());
+				}
 				break;
-			case 3:
+			case 3: //Exit
 				System.out.println("\n\nTerminating...\n\n\nProgram terminated!");
 				break;
-			default:
+			default: //Error
 				System.out.println("\nIntroduce a valid option!\n");
 				break;
 			}

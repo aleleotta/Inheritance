@@ -17,7 +17,7 @@ public class Hour {
 	
 	@Override
 	public String toString() {
-		return "Hour: " + getHour() + ":" + getMinute();
+		return "\nHour: " + hour + ":" + minute;
 	}
 	
 	public boolean setHour(int hour) {
