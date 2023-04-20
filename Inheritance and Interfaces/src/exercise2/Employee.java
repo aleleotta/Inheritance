@@ -1,6 +1,6 @@
 package exercise2;
 
-public class Functions {
+public class Employee {
 }
 
 /*
