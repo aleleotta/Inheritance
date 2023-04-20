@@ -13,13 +13,6 @@ public class ExactHour extends Hour {
 	public void increase() {
 		second++;
 	}
-	
-	
-	public static void objectLinker(ExactHour firstObj, ExactHour secondObj) {
-		firstObj.hour = secondObj.hour;
-		firstObj.minute = secondObj.minute;
-		firstObj.second = secondObj.second;
-	}
 
 	public boolean setSecond(int second) {
 		boolean valid = false;

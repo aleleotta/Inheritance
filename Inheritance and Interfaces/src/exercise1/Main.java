@@ -24,7 +24,6 @@ public class Main {
 				System.out.print("Seconds: ");
 				second = sc.nextInt();
 				time1 = new ExactHour(hour, minute, second);
-				ExactHour.objectLinker(time1, time);
 				break;
 			case 'N', 'n':
 				System.out.print("Hours: ");
