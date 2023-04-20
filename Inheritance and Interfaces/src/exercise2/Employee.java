@@ -1,6 +1,7 @@
 package exercise2;
 
 public class Employee {
+	private String name = "";
 }
 
 /*
