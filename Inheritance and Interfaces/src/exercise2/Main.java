@@ -3,8 +3,16 @@ import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		sc.close();
+		Employee E1 = new Employee("Rafa");
+		Director D1 = new Director("Mario");
+		Worker OP1 = new Worker("Mario");
+		Official OF1 = new Official("Luis");
+		Technician T1 = new Technician("Pablo");
+		System.out.println(E1);
+		System.out.println(D1);
+		System.out.println(OP1);
+		System.out.println(OF1);
+		System.out.println(T1);
 	}
 }
 
