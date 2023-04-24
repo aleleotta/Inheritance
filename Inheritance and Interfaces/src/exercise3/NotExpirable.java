@@ -7,4 +7,12 @@ public class NotExpirable extends Product {
 		super(name, price);
 	}
 
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	
 }

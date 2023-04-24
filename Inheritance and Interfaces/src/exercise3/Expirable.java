@@ -7,4 +7,12 @@ public class Expirable extends Product {
 		super(name, price);
 	}
 
+	public int getExpireDays() {
+		return ExpireDays;
+	}
+
+	public void setExpireDays(int expireDays) {
+		ExpireDays = expireDays;
+	}
+	
 }
