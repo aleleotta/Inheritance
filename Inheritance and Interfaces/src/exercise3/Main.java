@@ -10,6 +10,7 @@ public class Main {
 		while(option == 'Y' || option == 'y') {
 			String name = "";
 			double price = 0;
+			char expirable = 'Z';
 			System.out.print("Introduce a name for the following product: ");
 			name = sc.next();
 			System.out.print("Introduce a price for the following product: ");
@@ -19,9 +20,19 @@ public class Main {
 					System.out.println("You can't introduce a negative price. Try again!");
 				}
 			}
-			productObj = new Product(name, price);
-			collection = Arrays.copyOf(collection, collection.length+1);
-			collection[collection.length-1] = productObj;
+			while(expirable != 'Y' || expirable != 'y' || expirable != 'N' || expirable != 'n') {
+				System.out.println("Is the following product expirable?");
+				expirable = sc.next().charAt(0);
+				if(expirable == 'Y' || expirable == 'y') {
+					productObj = new Expirable(name, price);
+					collection = Arrays.copyOf(collection, collection.length+1);
+					collection[collection.length-1] = productObj;
+				} else if(expirable == 'N' || expirable == 'n') {
+					productObj = new NotExpirable(name, price);
+					collection = Arrays.copyOf(collection, collection.length+1);
+					collection[collection.length-1] = productObj;
+				}
+			}
 			System.out.println("Would you like to insert another product? Y/N");
 			option = sc.next().charAt(0);
 		}
