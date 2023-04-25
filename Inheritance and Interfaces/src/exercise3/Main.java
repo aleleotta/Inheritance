@@ -3,7 +3,29 @@ import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
+		Product[] collection = new Product[0];
+		Product productObj;
 		Scanner sc = new Scanner(System.in);
+		char option = 'Y';
+		while(option == 'Y' || option == 'y') {
+			String name = "";
+			double price = 0;
+			System.out.print("Introduce a name for the following product: ");
+			sc.nextLine();
+			name = sc.nextLine();
+			System.out.print("Introduce a price for the following product: ");
+			while(price < 0) {
+				price = sc.nextDouble();
+				if(price < 0) {
+					System.out.println("You can't introduce a negative price. Try again!");
+				}
+			}
+			productObj = new Product(name, price);
+			collection = Arrays.copyOf(collection, collection.length+1);
+			collection[collection.length-1] = productObj;
+			System.out.println("Would you like to insert another product? Y/N");
+			option = sc.next().charAt(0);
+		}
 		sc.close();
 	}
 }
