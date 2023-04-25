@@ -16,6 +16,7 @@ public class Main {
 			System.out.print("Introduce a price for the following product: ");
 			while(price < 0) {
 				price = sc.nextDouble();
+				sc.nextLine();
 				if(price < 0) {
 					System.out.println("You can't introduce a negative price. Try again!");
 				}
@@ -41,7 +42,8 @@ public class Main {
 		if(option == 'Y' || option == 'y') {
 			int i = 1;
 			for(Product product: collection) {
-				System.out.println("Product " + i + ":\n\tName: " + product.getName() + "\n\tPrice: " + product.getPrice());
+				
+				System.out.println("Product " + i + ":" + product.toString());
 				i++;
 			}
 		}
