@@ -11,8 +11,7 @@ public class Main {
 			String name = "";
 			double price = 0;
 			System.out.print("Introduce a name for the following product: ");
-			sc.nextLine();
-			name = sc.nextLine();
+			name = sc.next();
 			System.out.print("Introduce a price for the following product: ");
 			while(price < 0) {
 				price = sc.nextDouble();
