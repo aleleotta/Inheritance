@@ -6,6 +6,11 @@ public class NotExpirable extends Product {
 	public NotExpirable(String name, double price) {
 		super(name, price);
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString() + "\n\tType: " + this.type;
+	}
 
 	public String getType() {
 		return type;

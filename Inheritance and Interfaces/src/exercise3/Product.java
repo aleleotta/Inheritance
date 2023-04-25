@@ -8,6 +8,19 @@ public class Product {
 		this.name = name;
 		this.price = price;
 	}
+	
+	public double calculate(int productAmount) {
+		double result = 0;
+		result = this.price * productAmount;
+		return result;
+	}
+	
+	@Override
+	public String toString() {
+		return "\nProduct:"
+				+ "\n\tName: " + this.name
+				+ "\n\tPrice: " + this.price;
+	}
 
 	public String getName() {
 		return name;
@@ -45,7 +58,7 @@ b) En Perecedero, además de lo que hace producto, el precio se reducirá según
 		Si le quedan 2 días para caducar, se reducirá 3 veces el precio final.
 		Si le quedan 3 días para caducar, se reducirá a la mitad de su precio final.
 	En NoPerecedero, hace lo mismo que en producto.
-c) Crea una clase ejecutable y crea un array de productos.
+c) Crea una clase ejecutable y crea un array de productos (array de objetos).
 
 Crea productos de distinto tipo y muestra el precio total de vender 5 productos de cada uno. 
 */
