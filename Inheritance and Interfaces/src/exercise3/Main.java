@@ -26,6 +26,15 @@ public class Main {
 			System.out.println("Would you like to insert another product? Y/N");
 			option = sc.next().charAt(0);
 		}
+		System.out.println("Would you like to see the list of all products?");
+		option = sc.next().charAt(0);
+		if(option == 'Y' || option == 'y') {
+			int i = 1;
+			for(Product product: collection) {
+				System.out.println("Product " + i + ":\n\tName: " + product.getName() + "\n\tPrice: " + product.getPrice());
+				i++;
+			}
+		}
 		sc.close();
 	}
 }
