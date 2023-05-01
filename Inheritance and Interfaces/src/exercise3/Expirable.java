@@ -7,8 +7,7 @@ public class Expirable extends Product {
 		super(name, price);
 	}
 	
-	@Override
-	public double calculate(int productAmount) {
+	public double calculate(int productAmount, int expireDays) {
 		double result = 0;
 		if(expireDays == 3) {
 			result = super.calculate(productAmount) / 2;

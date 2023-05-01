@@ -9,35 +9,45 @@ public class Main {
 		char option = 'Y';
 		while(option == 'Y' || option == 'y') {
 			String name = "";
-			double price = 0;
+			double price = -1;
 			char expirable = 'Z';
 			System.out.print("Introduce a name for the following product: ");
 			name = sc.next();
-			System.out.print("Introduce a price for the following product: ");
 			while(price < 0) {
+				System.out.print("Introduce a price for the following product: ");
 				price = sc.nextDouble();
 				sc.nextLine();
 				if(price < 0) {
 					System.out.println("You can't introduce a negative price. Try again!");
 				}
 			}
-			while(expirable != 'Y' || expirable != 'y' || expirable != 'N' || expirable != 'n') {
-				System.out.println("Is the following product expirable?");
+			while(expirable != 'Y' && expirable != 'y' && expirable != 'N' && expirable != 'n') {
+				System.out.println("Is the following product expirable? Y/N");
 				expirable = sc.next().charAt(0);
-				if(expirable == 'Y' || expirable == 'y') {
-					productObj = new Expirable(name, price);
-					collection = Arrays.copyOf(collection, collection.length+1);
-					collection[collection.length-1] = productObj;
-				} else if(expirable == 'N' || expirable == 'n') {
-					productObj = new NotExpirable(name, price);
-					collection = Arrays.copyOf(collection, collection.length+1);
-					collection[collection.length-1] = productObj;
-				}
+			}
+			if(expirable == 'Y' || expirable == 'y') {
+				int expireDays = 0;
+				int amount = 0;
+				System.out.print("Introduce expiration days left: ");
+				expireDays = sc.nextInt();
+				System.out.print("Introduce amount of units: ");
+				amount = sc.nextInt();
+				productObj = new Expirable(name, price);
+				productObj.calculate(amount, expireDays);
+				collection = Arrays.copyOf(collection, collection.length+1);
+				collection[collection.length-1] = productObj;
+			} else if(expirable == 'N' || expirable == 'n') {
+				String type = "";
+				System.out.print("Specify type of not expirable product: ");
+				type = sc.nextLine();
+				productObj = new NotExpirable(name, type, price);
+				collection = Arrays.copyOf(collection, collection.length+1);
+				collection[collection.length-1] = productObj;
 			}
 			System.out.println("Would you like to insert another product? Y/N");
 			option = sc.next().charAt(0);
 		}
-		System.out.println("Would you like to see the list of all products?");
+		System.out.println("Would you like to see the list of all products? Y/N");
 		option = sc.next().charAt(0);
 		if(option == 'Y' || option == 'y') {
 			int i = 1;
