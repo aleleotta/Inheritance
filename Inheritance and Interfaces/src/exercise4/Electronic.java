@@ -1,6 +1,31 @@
 package exercise4;
 
 public class Electronic {
+	private double price = 0;
+	private char energyConsumption = 'Z';
+	private double weight = 0;
+	private enum color {
+		WHITE, BLACK, RED, BLUE, GRAY
+	}
+	
+	public Electronic() {}
+	
+	public Electronic(double price, double weight) {
+		if(price > 0 && weight > 0) {
+			this.price = price;
+			this.weight = weight;
+		}
+	}
+	
+	public Electronic(double price, double weight, char energyConsumption, String color) {
+		if(price > 0 && weight > 0 && (energyConsumption == 'A' || energyConsumption == 'B' || energyConsumption == 'C'
+				|| energyConsumption == 'D' || energyConsumption == 'E' || energyConsumption == 'F')) {
+			this.price = price;
+			this.weight = weight;
+			this.energyConsumption = energyConsumption;
+		}
+	}
+	
 }
 
 /*
