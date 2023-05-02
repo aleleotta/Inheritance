@@ -1,5 +1,4 @@
 package exercise4;
 
-public class Washer {
-
+public class Washer extends Electronic {
 }
