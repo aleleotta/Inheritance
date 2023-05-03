@@ -32,8 +32,8 @@ public class Main {
 				expireDays = sc.nextInt();
 				System.out.print("Introduce amount of units: ");
 				amount = sc.nextInt();
-				productObj = new Expirable(name, price);
-				productObj.calculate(amount, expireDays);
+				Product productObjCast = (Expirable) productObj;
+				productObjCast.calculate(amount, expireDays);
 				collection = Arrays.copyOf(collection, collection.length+1);
 				collection[collection.length-1] = productObj;
 			} else if(expirable == 'N' || expirable == 'n') {
