@@ -17,7 +17,7 @@ public class Electronic {
 		}
 	}
 	
-	public Electronic(double price, double weight, char energyConsumption, String color) {
+	public Electronic(double price, double weight, char energyConsumption) {
 		if(price > 0 && weight > 0 && (energyConsumption == 'A' || energyConsumption == 'B' || energyConsumption == 'C'
 				|| energyConsumption == 'D' || energyConsumption == 'E' || energyConsumption == 'F')) {
 			this.price = price;
