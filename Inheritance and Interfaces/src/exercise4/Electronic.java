@@ -1,10 +1,10 @@
 package exercise4;
 
 public class Electronic {
-	private double price = 0;
-	private char energyConsumption = 'Z';
-	private double weight = 0;
-	private enum color {
+	protected double price = 0;
+	protected char energyConsumption = 'Z';
+	protected double weight = 0;
+	protected enum color {
 		WHITE, BLACK, RED, BLUE, GRAY
 	}
 	
@@ -26,6 +26,27 @@ public class Electronic {
 		}
 	}
 	
+	public void checkEnergyConsumption() {}
+	
+	public void checkColor() {}
+	
+	public double finalPrice() {
+		double finalPrice = 0;
+		return finalPrice;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public char getEnergyConsumption() {
+		return energyConsumption;
+	}
+
+	public double getWeight() {
+		return weight;
+	}
+	
 }
 
 /*
@@ -39,8 +60,8 @@ Los constructores que se implementarán son:
 	Un constructor con todos los atributos. 
 Los métodos que implementará son:
 	Métodos get de todos los atributos. 
-	comprobarConsumoEnergetico(char letra): comprueba que la letra es correcta. Si no es correcta, usará la letra por defecto. Se invocará al crear el objeto 	y no será visible. 	
-	comprobarColor(String color): comprueba que el color es correcto, si no lo es usa el color por defecto. Se invocará al crear el objeto y no será	visible.	
+	comprobarConsumoEnergetico(char letra): comprueba que la letra es correcta. Si no es correcta, usará la letra por defecto. Se invocará al crear el objeto y no será visible. 	
+	comprobarColor(String color): comprueba que el color es correcto, si no lo es usa el color por defecto. Se invocará al crear el objeto y no será visible.	
 	precioFinal(): según el consumo energético, aumentará su precio base, y según su tamaño, también aumentará su precio base. Esta es la lista de precios:
 	(Ver el enunciado.)
 
