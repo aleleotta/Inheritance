@@ -75,7 +75,9 @@ Los constructores que se implementarán serán:
 	Recuerda que debes llamar al constructor de la clase padre. 
 Los métodos que se implementara serán: 
 	Método get de carga.
-	precioFinal(): si tiene una carga mayor de 30 kg, aumentará el precio 50 €, si no es así, no se incrementará el precio. Llama al método padre y añade el código necesario. Recuerda que las condiciones que hemos visto en la clase Electrodomestico también deben afectar al precio. 		
+	precioFinal(): si tiene una carga mayor de 30 kg, aumentará el precio 50 €, si no es así, no se incrementará el precio.
+	Llama al método padre y añade el código necesario. Recuerda que las condiciones que hemos visto en la clase Electrodomestico también deben afectar al precio. 		
+
 Crearemos una subclase llamada Television con las siguientes características:
 	Sus atributos son resolución (en pulgadas) y sintonizador TDT (booleano), además de los atributos heredados. 	
 	Por defecto, la resolución será de 20 pulgadas y el sintonizador será false. 	
@@ -87,6 +89,7 @@ Los constructores que se implementarán serán:
 Los métodos que se implementarán son:
 	Métodos get de resolución y sintonizador TDT. 	
 	precioFinal(): si tiene una resolución mayor de 40 pulgadas, se incrementará el precio un 30% y si tiene un sintonizador TDT incorporado, aumentará 50 €. Recuerda que las condiciones que hemos visto en la clase Electrodomestico también deben afectar al precio.  	
+
 Ahora crea una clase ejecutable que realice lo siguiente:
 	Crea un array de tipo Electrodomestico de 10 posiciones.
 	Asigna a cada posición un objeto de las clases anteriores con los valores que desees. No hace falta pedir los datos por teclado, puedes ponerlos directamente en los constructores. Prueba todos y cada uno de los constructores de las distintas clases creadas: Electrodomestico, Lavadora y Television. Juego con distintos valores para la eficiencia energética y para el peso, para así probar todas las variaciones de precio.
