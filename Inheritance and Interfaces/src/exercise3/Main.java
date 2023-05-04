@@ -29,11 +29,12 @@ public class Main {
 				int expireDays = 0;
 				int amount = 0;
 				System.out.print("Introduce expiration days left: ");
-				expireDays = sc.nextInt();
+				while(expireDays <= 0) {
+					expireDays = sc.nextInt();
+				}
 				System.out.print("Introduce amount of units: ");
 				amount = sc.nextInt();
-				Expirable productObjCast = new Expirable();
-				productObjCast.calculate(amount, expireDays);
+				Expirable productObj = new Expirable(name, price);
 				collection = Arrays.copyOf(collection, collection.length+1);
 				collection[collection.length-1] = productObj;
 			} else if(expirable == 'N' || expirable == 'n') {

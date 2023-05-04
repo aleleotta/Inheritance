@@ -30,10 +30,13 @@ public class Expirable extends Product {
 		return expireDays;
 	}
 
-	public void setExpireDays(int expireDays) {
+	public boolean setExpireDays(int expireDays) {
+		boolean check = false;
 		if(expireDays <= 0) {
 			this.expireDays = expireDays;
+			check = true;
 		}
+		return check;
 	}
 	
 }
