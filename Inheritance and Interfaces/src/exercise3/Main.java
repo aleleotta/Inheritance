@@ -4,7 +4,8 @@ import java.util.*;
 public class Main {
 	public static void main(String[] args) {
 		Product[] collection = new Product[0];
-		Product productObj;
+		Expirable expProduct;
+		NotExpirable notExpProduct;
 		Scanner sc = new Scanner(System.in);
 		char option = 'Y';
 		while(option == 'Y' || option == 'y') {
@@ -34,16 +35,18 @@ public class Main {
 				}
 				System.out.print("Introduce amount of units: ");
 				amount = sc.nextInt();
-				Expirable productObj = new Expirable(name, price);
+				expProduct = new Expirable(name, price, expireDays);
+				expProduct.setPrice(expProduct.calculate(amount) * amount);
 				collection = Arrays.copyOf(collection, collection.length+1);
-				collection[collection.length-1] = productObj;
+				collection[collection.length-1] = expProduct;
 			} else if(expirable == 'N' || expirable == 'n') {
 				String type = "";
 				System.out.print("Specify type of not expirable product: ");
+				sc.nextLine();
 				type = sc.nextLine();
-				productObj = new NotExpirable(name, type, price);
+				notExpProduct = new NotExpirable(name, type, price);
 				collection = Arrays.copyOf(collection, collection.length+1);
-				collection[collection.length-1] = productObj;
+				collection[collection.length-1] = notExpProduct;
 			}
 			System.out.println("Would you like to insert another product? Y/N");
 			option = sc.next().charAt(0);
@@ -53,8 +56,7 @@ public class Main {
 		if(option == 'Y' || option == 'y') {
 			int i = 1;
 			for(Product product: collection) {
-				
-				System.out.println("Product " + i + ":" + product.toString());
+				System.out.println("\nProduct " + i + ":" + product.toString());
 				i++;
 			}
 		}

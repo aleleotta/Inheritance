@@ -5,6 +5,7 @@ public class NotExpirable extends Product {
 	
 	public NotExpirable(String name, String type, double price) {
 		super(name, price);
+		this.type = type;
 	}
 	
 	@Override

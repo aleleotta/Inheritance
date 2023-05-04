@@ -17,6 +17,8 @@ public class Expirable extends Product {
 			result = super.calculate(productAmount) / 3;
 		} else if(expireDays == 1) {
 			result = super.calculate(productAmount) / 4;
+		} else {
+			result = getPrice();
 		}
 		return result;
 	}
