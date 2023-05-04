@@ -32,7 +32,7 @@ public class Main {
 				expireDays = sc.nextInt();
 				System.out.print("Introduce amount of units: ");
 				amount = sc.nextInt();
-				Product productObjCast = (Expirable) productObj;
+				Expirable productObjCast = new Expirable();
 				productObjCast.calculate(amount, expireDays);
 				collection = Arrays.copyOf(collection, collection.length+1);
 				collection[collection.length-1] = productObj;

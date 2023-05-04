@@ -3,11 +3,13 @@ package exercise3;
 public class Expirable extends Product {
 	private int expireDays = 0;
 	
-	public Expirable(String name, double price) {
+	public Expirable(String name, double price, int expireDays) {
 		super(name, price);
+		this.expireDays = expireDays;
 	}
 	
-	public double calculate(int productAmount, int expireDays) {
+	@Override
+	public double calculate(int productAmount) {
 		double result = 0;
 		if(expireDays == 3) {
 			result = super.calculate(productAmount) / 2;
@@ -29,7 +31,9 @@ public class Expirable extends Product {
 	}
 
 	public void setExpireDays(int expireDays) {
-		this.expireDays = expireDays;
+		if(expireDays <= 0) {
+			this.expireDays = expireDays;
+		}
 	}
 	
 }
