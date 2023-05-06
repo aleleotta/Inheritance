@@ -1,6 +1,23 @@
 package exercise5;
 
-public class Poligon {
+public abstract class Poligon {
+	private int sidesAmount = 0;
+	
+	public Poligon(int sidesAmount) {
+		this.sidesAmount = sidesAmount;
+	}
+
+	public abstract double area();
+	
+	@Override
+	public String toString() {
+		return "Amount of sides: " + sidesAmount;
+	}
+
+	public int getSidesAmount() {
+		return sidesAmount;
+	}
+	
 }
 
 /*
