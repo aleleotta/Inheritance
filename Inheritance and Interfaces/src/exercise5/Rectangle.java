@@ -15,7 +15,9 @@ public class Rectangle extends Poligon{
 	}
 	
 	public double area() {
-		return 0;
+		double result = 0;
+		result = side1 * side2;
+		return result;
 	}
 	
 	public String toString() {

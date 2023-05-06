@@ -17,7 +17,8 @@ public class Triangle extends Poligon{
 	}
 	
 	public double area() {
-		return 0;
+		int result = 0;
+		return result;
 	}
 	
 	public String toString() {
